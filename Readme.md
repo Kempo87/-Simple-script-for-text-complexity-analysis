@@ -1,19 +1,13 @@
-# Nazwa programu: Obliczanie średniej długości słów
+# Opis programu:
 
-## Opis: Ten program umożliwia użytkownikowi wprowadzenie tekstu artykułu, a następnie oblicza średnią długość słów w tym tekście. Program liczy liczbę znaków, liczbę słów oraz oblicza średnią długość słów na podstawie tych danych.
+Program przetwarza tekst wprowadzony przez użytkownika i oblicza średnią długość słów, wyłączając liczby. Oto kluczowe elementy programu:
 
-### Instrukcje użytkowania:
+PUNCTUATIONS: To ciąg znaków zawierający zestaw znaków interpunkcyjnych, które zostaną usunięte z tekstu podczas przetwarzania. Obejmuje to przecinek, kropkę, znak zapytania, znak wykrzyknika i znak procenta.
 
-Uruchom program.
-Program poprosi użytkownika o podanie tekstu artykułu. Wprowadź tekst i naciśnij Enter.
-Program przetworzy podany tekst i obliczy średnią długość słów w tekście.
-Wynik zostanie wyświetlony na ekranie w formie komunikatu.
+remove_punctuation(text): Ta funkcja przyjmuje tekst wejściowy i usuwa określone znaki interpunkcyjne przy użyciu pętli. Zwraca ona tekst, w którym znaki interpunkcyjne zostały zamienione na spacje.
 
-#### Działanie programu:
+compute_average_length(text): Ta funkcja oblicza średnią długość słowa (wyłączając liczby) w podanym tekście. Najpierw wywołuje funkcję remove_punctuation(), aby usunąć znaki interpunkcyjne, a następnie dzieli tekst na słowa. Wyklucza słowa zawierające cyfry z obliczeń i zgłasza wyjątek ZeroDivisionError, jeśli w tekście nie ma żadnych słów. Funkcja oblicza średnią długość słów i zwraca ją.
 
-Program wczytuje tekst od użytkownika za pomocą funkcji input i zapisuje go w zmiennej text.
-Następnie program oblicza liczbę wszystkich znaków w tekście i zapisuje ją w zmiennej characters.
-Program oblicza liczbę słów w tekście, dzieląc tekst na części przy użyciu spacji za pomocą funkcji split() i zliczając je. Liczbę słów zapisuje w zmiennej words.
-Oblicza średnią długość słów, odejmując od liczby znaków liczbę słów (co odpowiada liczbie spacji między słowami) i dzieląc to przez liczbę słów. Wynik zapisuje w zmiennej average_word_length.
-Na koniec program wyświetla wynik w formie komunikatu, wskazując, ile średnio znaków ma słowo w podanym tekście artykułu.
-Ten program jest przykładem prostej analizy tekstu i może być używany do obliczenia średniej długości słów w różnych artykułach lub tekstach.
+main(): Główna funkcja programu. Pobiera od użytkownika tekst, wywołuje funkcję compute_average_length() do obliczenia średniej długości słów, a następnie wyświetla wynik z dwoma miejscami po przecinku.
+
+## Program umożliwia użytkownikowi wprowadzenie tekstu, przetwarza go, usuwając określone znaki interpunkcyjne, a następnie oblicza i wyświetla średnią długość słów. Program zawiera również obsługę błędów, aby radzić sobie z przypadkami, w których w tekście nie ma żadnych słów, co zapobiega jego awarii.
